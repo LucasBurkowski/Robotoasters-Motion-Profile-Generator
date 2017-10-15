@@ -2,23 +2,23 @@
 <html>
 <head>
 	<title>RoboToasters Motion Profile Genereator</title>
+	<script type="text/javascript" src="script.js"></script>
 	<link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
-<body>
-	<input id="profileName" placeholder="Title" style="margin: 20px auto 20px auto; text-align: center; display: block;">
+<body onload="init()">
+	<input id="title" placeholder="Title" style="margin: 20px auto 20px auto; text-align: center; display: block;">
+	<canvas id="field"></canvas>
 	<h4 class="sub-header">Waypoint Input</h4>
-	<div>
-		<button type="button" onclick="addPoint()" class="btn-primary">Add Point</button>
+	<div class="buttonContainer">
+		<button onclick="addPoint()" class="btn btn-primary">Add Point</button>
 		<!-- <button onclick="update()">Update</button> -->
-		<button type="button" onclick="exportData()" class="btn-primary">Download</button>
-		<button type="button" onclick="showData()" class="btn-primary">Display Path</button>
-		<button type="button" onclick="importData()" class="btn-primary">Import</button>
-		<button type="button" onclick="flipField()" class="btn-primary">Flip Field</button>
+		<button onclick="exportData()" class="btn btn-primary">Download</button>
+		<button onclick="showData()" class="btn btn-primary">Display Path</button>
+		<button onclick="importData()" class="btn btn-primary">Import</button>
+		<button onclick="flipField()" class="btn btn-primary">Flip Field</button>
 		<span style="font-size: 15px; float: right;">Is reversed: <input type="checkbox" id="isReversed"></span>
-	</div>
-	<div class="table-responsive center-block ">	
+	</div>	
 		<table class="table table-striped" style="width: 800px; margin: auto; float none;">
 			<thead>
 				<tr>
@@ -40,6 +40,14 @@
 				</tr>
 			</tbody>
 		</table>
+		
+		<div class="shade hide behind" onclick="closeModal()"></div>
+		<div class="modal hide behind">
+			<div><span id="modalTitle">UntitledPath.java</span><span class="close" onclick="closeModal()">✕</span></div>
+			<pre>
+				Hello, there
+			</pre>
+		</div>
 	</div>
 </body>
 
