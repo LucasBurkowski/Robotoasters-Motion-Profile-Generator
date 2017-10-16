@@ -1,0 +1,79 @@
+#title	{
+	margin: 20px auto 20px auto; 
+	text-align: center; 
+	display: block;
+}	
+
+canvas {
+	margin: 20px auto; 
+	display: block;
+}
+
+.table {
+	width: 800px; 
+	margin: auto; 
+	float: none;
+}
+
+.buttonContainer {
+	margin: 10px auto; 
+	width: 800px;
+}
+
+.modal {
+	position: fixed; 
+	width: 1000px;
+	min-height: 100px;
+	top: 100px;
+	left: 0; right: 0;
+	margin: 0 auto;
+	opacity: 1;
+	background-color: #fff;
+	transition: opacity 0.5s;
+}
+
+.shade {
+	display: block;
+	width: 200vw;
+	height: 200vh;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	left: -50vw;
+	top: -50vh;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+.shade.hide, .modal.hide {
+	opacity: 0;
+}
+
+.shade.behind, .modal.behind {
+	z-index: -5;
+}
+
+.modal > div {
+	background-color: #34495e;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	z-index: 10;
+}
+
+.close {
+	position: absolute;
+	display: inline-block;
+	right: 15px;
+	cursor: pointer;
+	color: #ccc;
+	transition: color 0.15s;
+}
+
+.close:hover {
+	color: #fff;
+}
+pre {
+	padding: 0 20px;
+	font-size: 14px;
+	font-family: 'Source Code Pro', monospace !important;
+}

@@ -1,11 +1,11 @@
 var waypoints = [];
 var ctx;
-var width = 1656; //pixels
-var height = 823; //pixels
-var fieldWidth = 652; // in inches
-var fieldHeight = 324; // in inches
-var robotWidth = 35.45; //inches
-var robotHeight = 33.325; //inches
+var width = 480; //pixels
+var height = 480; //pixels
+var fieldWidth = 144; // in inches
+var fieldHeight = 144; // in inches
+var robotWidth = 18; //inches
+var robotHeight = 18; //inches
 var pointRadius = 5;
 var turnRadius = 30;
 var kEpsilon = 1E-9;
@@ -231,7 +231,7 @@ function init() {
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle="#FF0000";
     image = new Image();
-    image.src = 'field.png';
+    image.src = 'Relic-Recovery-Field.jpg';
     image.onload = function(){
         ctx.drawImage(image, 0, 0, width, height);
         update();
@@ -278,7 +278,7 @@ function addPoint() {
 		+"<td><input value='0'></td>"
 		+"<td><input value='60'></td>"
 		+"<td class='comments'><input placeholder='Comments'></td>"
-		+"<td><button onclick='$(this).parent().parent().remove();update()'>Delete</button></td></tr>"
+		+"<td><button onclick='$(this).parent().parent().remove();update()' class='btn btn-danger'>Delete</button></td></tr>"
 	);
 	update();
 	$('input').unbind("change paste keyup");

@@ -2,32 +2,17 @@
 <html>
 <head>
 	<title>RoboToasters Motion Profile Genereator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<script src="blob.js"></script>
+    <script src="filesaver.js"></script>
 	<link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 </head>
 
-<<<<<<< HEAD
-<body>
-	<script>
-	window.onload = function() {
-		var c = document.getElementById("field");
-		var ctx = c.getContext("2d");
-		image = new Image();
-		image.src = 'Relic-Recovery-Field.jpg';
-		image.onload = function(){
-			ctx.drawImage(image, 0, 0, 480, 480);
-			update();
-		}
-	}</script>
-	
-	<input id="profileName" placeholder="Title" style="margin: 20px auto 20px auto; text-align: center; display: block;">
-	<canvas id="field" width="480" height="480" style="margin: 0px auto;"></canvas>
-=======
 <body onload="init()">
-	<input id="title" placeholder="Title" style="margin: 20px auto 20px auto; text-align: center; display: block;">
+	<input id="title" placeholder="Title">
 	<canvas id="field"></canvas>
->>>>>>> 2996b5cda3b680fe07f08e744db28e4066425934
-	<h4 class="sub-header">Waypoint Input</h4>
 	<div class="buttonContainer">
 		<button onclick="addPoint()" class="btn btn-primary">Add Point</button>
 		<!-- <button onclick="update()">Update</button> -->
@@ -37,36 +22,35 @@
 		<button onclick="flipField()" class="btn btn-primary">Flip Field</button>
 		<span style="font-size: 15px; float: right;">Is reversed: <input type="checkbox" id="isReversed"></span>
 	</div>	
-		<table class="table table-striped" style="width: 800px; margin: auto; float none;">
-			<thead>
-				<tr>
-					<th>X</th>
-					<th>Y</th>
-					<th>Radius</th>
-					<th>Speed</th>
-					<th>Comments</th>
-					<th>Delete</th>
-				<tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="x"><input value="50"></td>
-					<td class="y"><input value="50"></td>
-					<td class="radius"><span>0</span></td>
-					<td class="speed"><span>0</span></td>
-					<td class="comments"><input placeholder="Comments"></td>
-				</tr>
-			</tbody>
-		</table>
+	<table class="table table-striped">
+		<thead>
+			<th>X</th>
+			<th>Y</th>
+			<th>Radius</th>
+			<th>Speed</th>
+			<th>Comments</th>
+			<th>Delete</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="x"><input value="50"></td>
+				<td class="y"><input value="50"></td>
+				<td class="radius"><span>0</span></td>
+				<td class="speed"><span>0</span></td>
+				<td class="comments"><input placeholder="Comments"></td>
+			</tr>
+		</tbody>
+	</table>
 		
-		<div class="shade hide behind" onclick="closeModal()"></div>
-		<div class="modal hide behind">
-			<div><span id="modalTitle">UntitledPath.java</span><span class="close" onclick="closeModal()">✕</span></div>
-			<pre>
-				Hello, there
-			</pre>
-		</div>
+	<div class="shade hide behind" onclick="closeModal()"></div>
+	<div class="modal hide behind">
+		<div><span id="modalTitle">UntitledPath.java</span><span class="close" onclick="closeModal()">✕</span></div>
+		<pre>
+			Hello, there
+		</pre>
 	</div>
+	
+	<input type="file" id="upl" style="display:none;">
 </body>
 
 </html>
